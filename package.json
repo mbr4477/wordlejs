@@ -1,0 +1,19 @@
+{
+  "name": "wordlejs",
+  "version": "0.1.0",
+  "description": "A Wordle solver.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Matthew Russell",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "node-fetch": "^3.2.0"
+  },
+  "type": "commonjs"
+}
