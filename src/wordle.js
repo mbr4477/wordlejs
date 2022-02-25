@@ -26,11 +26,17 @@ class WordleSolver {
     }
 
     getGuess() {
-        const guesses = this._getRankedGuesses(
-            this._words,
-            this._getExpectedFractionRemainingPerLetter(this._remaining)
-        )
-        return guesses[0]["guess"]
+        if (this._remaining.length > 1) {
+            const guesses = this._getRankedGuesses(
+                this._words,
+                this._getExpectedFractionRemainingPerLetter(this._remaining)
+            )
+            return guesses[0]["guess"]
+        } else if (this._remaining.length === 0) {
+            throw "No possible words remaining! Were the hints inconsistent?"
+        } else {
+            return this._remaining[0]
+        }
     }
 
     _getRankedGuesses(validGuesses, expectedFractionRemaining) {
